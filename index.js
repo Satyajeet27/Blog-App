@@ -4,13 +4,13 @@ const { connectDb } = require("./dbConnect/connect")
 const userRouter= require("./routes/user")
 const inventoryRouter= require("./routes/inventory")
 const cors= require("cors")
-const cloudinary= require("cloudinary").v2
+// const cloudinary= require("cloudinary").v2
 
-cloudinary.config({
-    cloud_name:'dqrtyunuk', 
-    api_key:'276262817529335',
-    api_secret:"AelbfpyCS9r8pE8SHlgAna4Fw3k"
-})
+// cloudinary.config({
+//     cloud_name:'dqrtyunuk', 
+//     api_key:'276262817529335',
+//     api_secret:"AelbfpyCS9r8pE8SHlgAna4Fw3k"
+// })
 
 const app= express()
 app.use(express.json())

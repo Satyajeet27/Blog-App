@@ -20,9 +20,9 @@ const Home = () => {
     <Layout>
         <div className="container d-flex justify-content-between flex-wrap my-3">
           {data && data?.data.map(info=>{
-            const {title, category, description, image, userId}= info
+            const {_id, title, category, description, imageUrl, userId}= info
             return(
-              <Articles author={userId.userName} title={title} category={category} description= {description} image={image}/>
+              <Articles _id={_id} author={userId.userName} title={title} category={category} description= {description} image={imageUrl}/>
             )
           })}
             

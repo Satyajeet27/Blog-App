@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import MyBlogs from "./pages/MyBlogs";
 import AddArticles from "./pages/AddArticles";
 import Private from "./Components/Routes/Private";
+import ViewArticle from "./pages/ViewArticle";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/food" element={<Food />} />
       <Route path="/travel" element={<Travel />} />
       <Route path="/tech" element={<Technology />} />
+      <Route path="/article/:id" element={<ViewArticle />} />
       <Route
         path="/myblogs"
         element={

@@ -9,9 +9,9 @@ const inventorySchema = new Schema({
         type: String,
         enum: ["Technology", "Travel", "Food"]
     },
-    image:{
+    imageUrl:{
         type:String,
-        require:["Image need to be uploaded first", true]
+        require:["Image Url is not added", true]
     },
     userId:{
         type:Schema.Types.ObjectId,
