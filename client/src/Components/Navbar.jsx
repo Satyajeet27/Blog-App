@@ -8,15 +8,15 @@ const Navbar = () => {
   // const [user, setUser]= useState("")
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
-  const dispatch= useDispatch()
+  const dispatch = useDispatch();
   // console.log(token)
   const getUser = async () => {
     try {
       const { data } = await API.get("/auth/get-current-user");
       console.log(data);
-      dispatch(currentUser(data))
+      dispatch(currentUser(data));
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
   useEffect(() => {
@@ -24,7 +24,7 @@ const Navbar = () => {
   }, []);
   const handleLogout = () => {
     localStorage.clear();
-    window.location.reload()
+    window.location.reload();
   };
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary shadow">
@@ -63,35 +63,30 @@ const Navbar = () => {
             </li>
             {user ? (
               <>
-                <li className="nav-item dropdown">
-                  <NavLink
-                    className="nav-link dropdown-toggle"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    // aria-expanded="false"
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/myblogs">
+                    MyBlogs
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/Add">
+                    Add Articles
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <hr />
+                </li>
+                <li className="nav-item">
+                  <span
+                    className="nav-link fw-bold text-light bg-info rounded"
                   >
                     {user ? user.userName : "User"}
-                  </NavLink>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <NavLink className="dropdown-item" to="/myblogs">
-                        MyBlogs
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink className="dropdown-item" to="/Add">
-                        Add Articles
-                      </NavLink>
-                    </li>
-                    <li>
-                      <hr className="dropdown-divider" />
-                    </li>
-                    <li>
-                      <button className="dropdown-item" onClick={handleLogout}>
-                        Logout
-                      </button>
-                    </li>
-                  </ul>
+                  </span>
+                </li>
+                <li className="nav-item">
+                  <button className=" btn btn-danger bg-gradient ms-2" onClick={handleLogout}>
+                    Logout
+                  </button>
                 </li>
               </>
             ) : (
@@ -108,7 +103,7 @@ const Navbar = () => {
                 </li>
               </>
             )}
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink className="nav-link" to="/tech">
                 Technology
               </NavLink>
@@ -122,8 +117,7 @@ const Navbar = () => {
               <NavLink className="nav-link" to="/travel">
                 Travel
               </NavLink>
-            </li>
-           
+            </li> */}
           </ul>
         </div>
       </div>

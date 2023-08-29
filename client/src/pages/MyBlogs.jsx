@@ -20,13 +20,13 @@ const MyBlogs = () => {
     <Layout>
         <div className="container d-flex justify-content-between flex-wrap my-3">
           {data && data?.data.map(info=>{
-            const {title, category, description, imageUrl, userId}= info
+            const {_id, title, category, description, imageUrl, userId}= info
             return(
-              <Articles key={info._id} author={userId.userName} title={title} category={category} description= {description} image={imageUrl}/>
+              <Articles key={info._id} _id={_id} author={userId.userName} title={title} category={category} description= {description} image={imageUrl}/>
             )
           })}
             
-        </div>
+        </div>  
     </Layout>
   )
 }

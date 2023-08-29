@@ -24,21 +24,21 @@ const ViewArticle = () => {
   return (
     <Layout>
       {data && (
-        <div className="card p-3 m-2 shadow">
-            <div className="card-title">Title: {data?.title}</div>
-            <p>Author: {data?.userId?.userName}</p>
-          <div className="w-100 text-center">
+        <div className=" p-3 m-2 bg-transparent text-light">
+            <div className="text-center  fs-1" style={{fontFamily: "'Gluten', cursive"}}> {data?.title}</div>
+            <p className="text-center">~ {data?.userId?.userName}</p>
+          <div className="w-100 text-center ">
           <img
             src={data?.imageUrl}
-            className=""
+            className=" rounded shadow"
             alt="..."
-            style={{ height: "24rem" }}
+            style={{ height: "24rem", objectFit:"contain" }}
           />
           </div>
 
-          <div className="card-body">
+          <div className="mt-2">
             
-            <p className="card-text overflow-hidden">{data?.description}</p>
+            <p className="text-break">{data?.description}</p>
           </div>
         </div>
       )}

@@ -6,7 +6,7 @@ const router= Router()
 router.post("/add-article",authMiddleware, addArticleController)
 router.get("/get-articles", getArticleController)
 router.get("/current-user-articles",authMiddleware, getCurrentUserArticlesController)
-router.post("/get-single-article",authMiddleware, getSingleArticleController)
+router.post("/get-single-article", getSingleArticleController)
 router.get("/test",authMiddleware,inventoryController)
 
 module.exports= router

@@ -10,6 +10,7 @@ import AddArticles from "./pages/AddArticles";
 import Private from "./Components/Routes/Private";
 import ViewArticle from "./pages/ViewArticle";
 
+
 function App() {
   return (
     <Routes>
